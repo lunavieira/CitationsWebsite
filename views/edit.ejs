@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1 >Editar Citação  </h1>
+
+    <form action="/edit/<%= editEntry.id %>" method="POST" autocomplete="off">
+
+      <div class="form-group">
+        <label for="name">Nome da citação:</label>
+        <input type="text" class="form-control text-left col-lg-6" name="name" value="<%= editEntry.name %>" required>
+        <label for="author">Autor:</label>
+        <input type="text" class="form-control text-left col-lg-6" name="author" value="<%= editEntry.author %>" required>
+        <label for="publication">Publicação:</label>
+        <input type="text" class="form-control text-left col-lg-6" name="publication" value="<%= editEntry.publication %>" required>
+        <label for="edition">Edição</label>
+        <input type="text" class="form-control text-left col-lg-6" name="edition" value="<%= editEntry.edition %>" required>
+        <label for="location">Local de Publicação:</label>
+        <input type="text" class="form-control text-left col-lg-6" name="location" value="<%= editEntry.location %>" required>
+        <label for="publisher">Editora:</label>
+        <input type="text" class="form-control text-left col-lg-6" name="publisher" value="<%= editEntry.publisher %>" required>
+        <label for="year">Ano:</label>
+        <input type="number" class="form-control text-left col-lg-6" name="year" value="<%= editEntry.year %>" required>
+        <label for="subject">Assunto:</label>
+        <input type="text" class="form-control text-left col-lg-6" name="subject" value="<%= editEntry.subject %>" required>
+        <label for="content">Trecho:</label>
+        <textarea rows=5 type="text" class="form-control text-left col-lg-6" name="content" required><%= editEntry.content %></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark">Enviar</button>
+    </form>
+
+
+
+
+  </div>
+</div>
+<%- include('partials/footer') %>

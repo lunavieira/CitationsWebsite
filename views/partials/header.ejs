@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Secrets</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body style="padding-top: 5%">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"   >
+    <span class="navbar-brand">Referências Bibliográficas</span>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <% if(!loggedUser) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/">Início</a>
+          </li>
+        <%  } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/entries">Minhas citações</a>
+          </li>
+        <% } %>
+
+
+      </ul>
+      <ul class="navbar-nav navbar-right">
+        <% if (!loggedUser){ %>
+          <li class="nav-item active">
+            <a class="nav-link" href="/login">Entrar <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/register">Cadastro <span class="sr-only">(current)</span></a>
+          </li>
+        <% } else { %>
+          <li class="nav-item active">
+            <a class="nav-link" href="/logout">Sair <span class="sr-only">(current)</span></a>
+          </li>
+        <% } %>
+
+      </ul>
+
+    </div>
+  </nav>

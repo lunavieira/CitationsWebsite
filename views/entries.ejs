@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+
+<div class="jumbotron text-left">
+  <div class="container">
+    <span>
+      <h1 >Minhas citações</h1>
+      <a class="btn btn-dark btn-lg" href="/submit" role="button">Adicionar </a>
+    </span>
+    <% citations.forEach(function(item){ %>
+    <hr>
+    <h3 class="text-left"> "<%= item.name %>"</h3>
+    <p class="text-left"> <b>Trecho:</b> <%= item.content %> </p>
+    <p class="text-left"> <b>Autor:</b> <%= item.author %> </p>
+    <p class="text-left"> <b>Publicação:</b> <%= item.publication %> </p>
+    <p class="text-left"> <b>Edição:</b> <%= item.edition %> </p>
+    <p class="text-left"> <b>Local de Publicação:</b> <%= item.location %> </p>
+    <p class="text-left"> <b>Editora:</b> <%= item.publisher %> </p>
+    <p class="text-left"> <b>Ano: </b><%= item.year %> </p>
+    <p class="text-left"> <b>Assunto:</b> <%= item.subject %> </p>
+
+      <a href="/edit/<%= item.id %>" class="btn btn-dark">Editar citação</a>
+
+      <a href="/delete/<%= item.id %>" class="btn btn-danger">Remover Citação</a>
+
+
+    <% }) %>
+
+
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>
