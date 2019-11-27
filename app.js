@@ -221,6 +221,11 @@ app.get("*", function(req,res){
   res.render("error", {loggedUser:authenticated});
 });
 
-app.listen(3000,function(){
+let port = process.env.PORT;
+if (port == NULL || port ==""){
+  port = 3000;
+}
+
+app.listen(port,function(){
   console.log("Server has started on port 3000");
 });
